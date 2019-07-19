@@ -8,9 +8,9 @@ pipeline {
         }
         stage('--test--') {
             steps {
-                sh "mvn test"
+                sh "mvn -Dmaven.test.skip=true"
             }
-        }
+        
         stage('--package--') {
             steps {
                 sh "mvn package"
